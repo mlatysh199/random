@@ -120,7 +120,7 @@ def solucionesPolinomio(polinomio):
 	# Primera parte: Intentamos encontrar todos los factores racionales.
 	# Simplificación del polinomio.
 	soluciones = []
-	if sum(polinomio) == polinomio[-1]:
+	if len(polinomio) == 1:
 		if not polinomio[-1]:
 			return True, []
 		return False, []
@@ -128,7 +128,7 @@ def solucionesPolinomio(polinomio):
 		soluciones.append(0)
 	while not polinomio[-1]:
 		polinomio.pop()
-	if sum(polinomio) == polinomio[-1]:
+	if len(polinomio) == 1:
 		return True, soluciones
 	# Teorema de los ceros racionales
 	soluciones += cerosRacionales(polinomio)
