@@ -147,7 +147,7 @@ def solucionesPolinomio(polinomio):
 	# - intervalo dado. Un cambio de monotonía es justamente un 0, lo agregamos
 	# - como una solución y lo ignoramos para el proceso anterior.
 	monotonia = []
-	soluciones = []
+	soluciones = [0]*(0 in soluciones)
 	# Encontramos los puntos de cambio de monotonía.
 	for i in solucionesPolinomio(derivar(polinomio))[1]:
 		intento = caracterizar(polinomio, i)
@@ -171,6 +171,10 @@ def solucionesPolinomio(polinomio):
 
 # Para hacer pruebas
 if __name__ == "__main__":
-	#print(solucionesPolinomio([20, 77, 41, -30]))
+	print(solucionesPolinomio([20, 77, 41, -30]))
 	print(solucionesPolinomio([3, 2, 6, 2]))
-	#print(solucionesPolinomio([0, 0, 0, 3]))
+	print(solucionesPolinomio([3]))
+	print(solucionesPolinomio([0]))
+	print(solucionesPolinomio([6, 0, 0, 3, -9, 0, 0, 0]))
+	print(solucionesPolinomio([1, 0, 1, 7, 0, 7, 0]))
+	print(solucionesPolinomio([-6, -11, 0, 18, 33]))
